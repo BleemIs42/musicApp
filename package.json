@@ -1,0 +1,50 @@
+{
+  "name": "musicApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android",
+    "mongo": "docker-compose up",
+    "server": "nodemon ./server/index.js",
+    "iphone8": "xcrun instruments -w \"iPhone 8 (11.2) [D479E40F-8B9B-4617-9E16-9118A106EBBB]\"",
+    "iphone": "instruments -s",
+    "react-devtools": "react-devtools"
+  },
+  "dependencies": {
+    "dva-core": "^1.3.0",
+    "native-base": "^2.7.2",
+    "react": "16.4.1",
+    "react-native": "0.56.0",
+    "react-navigation": "^2.9.3",
+    "react-navigation-redux-helpers": "^2.0.4",
+    "react-redux": "^5.0.7"
+  },
+  "devDependencies": {
+    "@babel/preset-stage-0": "7.0.0-beta.47",
+    "@babel/plugin-transform-runtime": "7.0.0-beta.47",
+    "@babel/preset-env": "7.0.0-beta.47",
+    "@babel/preset-react": "7.0.0-beta.47",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "23.4.0",
+    "babel-preset-react-native": "^5",
+    "babel-register": "^6.26.0",
+    "eslint": "^5.2.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-html": "^4.0.5",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "jest": "23.4.1",
+    "react-test-renderer": "16.4.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

@@ -1,0 +1,20 @@
+{
+    "parser": "babel-eslint",
+    "extends": "standard",
+    "plugins": [
+        "html",
+        "react"
+    ],
+    "env": {
+        "node": true
+    },
+    "rules": {
+        "indent": [2, 4],
+        "no-mixed-operators":"off",
+        "no-extend-native":"off",
+        "comma-dangle":"off",
+        "react/prop-types": 0,
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error"
+    }
+}
