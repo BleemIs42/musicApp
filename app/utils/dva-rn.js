@@ -12,6 +12,12 @@ export default (opts = {}) => {
     const AppNavigator = opts.navigator
     const { getStateForAction, getActionForPathAndParams } = AppNavigator.router
 
+    const navigationMiddleware = createReactNavigationReduxMiddleware(
+        'root',
+        state => state.nav,
+    )
+    const App = reduxifyNavigator(AppNavigator, 'root')
+
     @connect(state => ({nav: state[NAVIGATION]}))
     class Router extends Component {
         componentDidMount () {
@@ -46,18 +52,10 @@ export default (opts = {}) => {
         }
         render () {
             const { dispatch, nav } = this.props
-            const App = reduxifyNavigator(Router, 'root')
-            const navigation = {
-                dispatch,
-                state: nav,
-            }
-            return <App {...navigation} />
+
+            return <App dispatch={dispatch} state={nav} />
         }
     }
-    const navigationMiddleware = createReactNavigationReduxMiddleware(
-        'root',
-        state => state.nav,
-    )
 
     const initialState = getStateForAction(NavigationActions.init())
     const navReducer = (state = initialState, action) => {
